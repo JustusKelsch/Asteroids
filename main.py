@@ -29,6 +29,11 @@ def main():
         for item in updatable:
             item.update(dt)
 
+        for obj in asteroids:
+            if obj.check_collision(player):
+                print("Game over!")
+                exit()
+
         screen.fill("black")
 
         for item in drawable:
@@ -41,4 +46,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    
